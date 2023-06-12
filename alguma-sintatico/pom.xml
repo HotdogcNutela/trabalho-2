@@ -53,7 +53,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>br.dc.compiladores.alguma.lexico.Principal</mainClass>
+              <mainClass>br.dc.compiladores.alguma.sintatico.Principal</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>

@@ -10,6 +10,10 @@ NUMINT
 NUMREAL
 	:	('0'..'9')+ ('.' ('0'..'9')+)?
 	;
+
+OP_BOOL	
+	:	'E' | 'OU'
+	;
 	
 VARIAVEL
 	:	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*
@@ -30,10 +34,6 @@ OP_ARIT2
 OP_REL
 	:	'>' | '>=' | '<' | '<=' | '<>' | '='
 	;
-
-OP_BOOL	
-	:	'E' | 'OU'
-	;
 	
 fragment
 ESC_SEQ
@@ -47,7 +47,7 @@ WS 	:	( ' ' |'\t' | '\r' | '\n') {skip();}
 	;
 	
 programa
-	:	':' 'DECLARACOES' listaDeclaracoes ':' 'ALGORITMO' listaComandos
+	:	':' 'DECLARACOES' listaDeclaracoes ':' 'ALGORITMO' listaComandos EOF
 	;
 	
 listaDeclaracoes

@@ -12,10 +12,10 @@ public class Principal {
         AlgumaLexer lexer = new AlgumaLexer(cs);
 
         // Descomentar para depurar o Léxico
-        Token t = null;
-        while( (t = lexer.nextToken()).getType() != Token.EOF) {
-            System.out.println("<" + AlgumaLexer.VOCABULARY.getDisplayName(t.getType()) + "," + t.getText() + ">");
-        }
+//        Token t = null;
+//        while( (t = lexer.nextToken()).getType() != Token.EOF) {
+//            System.out.println("<" + AlgumaLexer.VOCABULARY.getDisplayName(t.getType()) + "," + t.getText() + ">");
+//        }
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         AlgumaParser parser = new AlgumaParser(tokens);
         parser.programa();
