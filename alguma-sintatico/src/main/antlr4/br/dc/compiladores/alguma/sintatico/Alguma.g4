@@ -25,7 +25,18 @@ COMENTARIO
 
 WS 	:	( ' ' |'\t' | '\r' | '\n') {skip();}
 	;
-	
+
+CADEIA_NAO_FECHADA
+	: '"' (ESC_SEQ | ~('\n'|'"'|'\\'))* '\n'
+	;
+
+COMENTARIO_NAO_FECHADO
+	: '{' ~('}'|'\n'|'\r')* '\n'
+	;
+SIMBOLO_NAO_RECONHECIDO
+	: .
+	;
+
 programa: declaracoes 'algoritmo' corpo 'fim-algoritmo';
 declaracoes: (decl_local_global)*;
 decl_local_global: declaracao_local | declaracao_global;

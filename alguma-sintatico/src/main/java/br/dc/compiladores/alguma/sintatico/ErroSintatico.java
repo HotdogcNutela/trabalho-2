@@ -39,8 +39,14 @@ public class ErroSintatico implements ANTLRErrorListener {
 
         Token t = (Token) offendingSymbol;
 
-        pw.println("Linha "+line+": erro sintatico proximo a "+t.getText());
-        pw.println("Fim da compilacao");
-        throw new RuntimeException();
+        if (t.getText() == "<EOF>") {
+            pw.println("Linha "+line+": erro sintatico proximo a EOF");
+            pw.println("Fim da compilacao");
+            throw new RuntimeException();
+        } else {
+            pw.println("Linha "+line+": erro sintatico proximo a "+t.getText());
+            pw.println("Fim da compilacao");
+            throw new RuntimeException();
+        }
     }
 }
