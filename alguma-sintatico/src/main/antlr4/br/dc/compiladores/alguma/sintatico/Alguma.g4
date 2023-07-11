@@ -37,7 +37,7 @@ SIMBOLO_NAO_RECONHECIDO
 	: .
 	;
 
-programa: declaracoes 'algoritmo' corpo 'fim-algoritmo';
+programa: declaracoes 'algoritmo' corpo 'fim_algoritmo';
 declaracoes: (decl_local_global)*;
 decl_local_global: declaracao_local | declaracao_global;
 declaracao_local: 'declare' variavel
